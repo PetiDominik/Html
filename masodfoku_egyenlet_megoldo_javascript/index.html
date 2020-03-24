@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Másodfokú egyenleg megoldó</title>
+<script language="JavaScript">
+	function masodfoku(){
+		a = Number(document.urlap1.szama.value);
+		b = Number(document.urlap1.szamb.value);
+		c = Number(document.urlap1.szamc.value);
+		if ( (a != '') && (!(isNaN(a))) && (b != '') && (!(isNaN(b))) && (c != '') && (!(isNaN(c))) ){
+          	d = (b*b-4*a*c);
+			
+			if (d<0){
+				alert("Nincs megoldás!");
+			}else{
+				if (d == 0){
+					alert("X = " + (-1*b)/(2*a));
+				}else{
+					alert("X1 = " + ((-1*b+Math.sqrt(d))/(2*a)).toFixed(3) + "\r\nX2 = " + ((-1*b-Math.sqrt(d))/(2*a)).toFixed(3));
+				}
+			}
+			
+		}else {
+          alert("Valami nem stimmel :/");
+        }
+	}
+</script>
+</head>
+
+<body align="center" style="background-color: #6CF5C8">
+	<h1>Másodfokú egyenlet megoldó</h1>
+	<form name="urlap1" align="center">
+		A: <input type="text" name="szama"> <br>
+		<br>
+		B: <input type="text" name="szamb"> <br>
+		<br>
+		C: <input type="text" name="szamc"> <br>
+		<br>
+		<input type="button" value="Nyomja meg a másodfokú egyenleg megoldásáért" onClick="masodfoku()"> <br>
+	</form>
+</body>
+</html>
